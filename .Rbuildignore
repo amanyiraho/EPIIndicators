@@ -2,3 +2,6 @@
 ^renv\.lock$
 ^EPIIndicators\.Rproj$
 ^\.Rproj\.user$
+^README\.Rmd$
+^\.github$
+^LICENSE\.md$

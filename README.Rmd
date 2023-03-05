@@ -1,15 +1,25 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # EPIIndicators
 
 <!-- badges: start -->
-
 [![R-CMD-check](https://github.com/amanyiraho/EPIIndicators/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/amanyiraho/EPIIndicators/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of EPIIndicators is to provide compute some common EPI
-indicators for now :
+The goal of EPIIndicators is to provide compute some common EPI indicators for now :
 
 - `Coverage`
 
@@ -21,8 +31,7 @@ indicators for now :
 
 ## Installation
 
-You can install the development version of EPIIndicators from
-[GitHub](https://github.com/) with:
+You can install the development version of EPIIndicators from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -33,37 +42,32 @@ devtools::install_github("amanyiraho/EPIIndicators")
 
 This is a basic example which shows you how to solve a common problem:
 
-``` r
+```{r example}
 library(EPIIndicators)
 ## basic example code
 ```
 
 Coverage of 900 children who received a vaccine out of 1000 population
 
-``` r
+```{r}
 coverage(n_received = 900, target_population = 1000)
-#> [1] 90
 ```
 
-Under immunized population of 800 children who received DTP 3 vaccine
-out of 1000 population
+Under immunized population of 800 children who received DTP 3 vaccine out of 1000 population
 
-``` r
+```{r}
 under_immunized(n_received = 800, target_population = 1000)
-#> [1] 200
 ```
 
 Zero dose of 900 children who received a vaccine out of 1000 population
 
-``` r
+```{r}
 zero_dose(n_received = 900, target_population = 1000)
-#> [1] 100
 ```
 
-Under dropout of 800 children who received DTP 3 vaccine out of 900 who
-received DTP 1
+Under dropout of 800 children who received DTP 3 vaccine out of 900 who received DTP 1
 
-``` r
+
+```{r}
 dropout(first_dose = 900, last_dose = 800)
-#> [1] 11.1
 ```
